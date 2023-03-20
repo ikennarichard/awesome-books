@@ -1,4 +1,18 @@
+.container {
+  display: grid;
+  gap: 10px;
+}
+
 input {
   display: block;
   margin-block-end: 5px;
+  width: 100px;
+}
+
+button {
+  width: 70px;
+}
+
+.book_details > p {
+  margin: 0;
 }
