@@ -1,29 +1,68 @@
-.container {
+main {
+  width: 100%;
   display: grid;
+  gap: 10px;
+  place-items: center;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  place-items: center;
   gap: 10px;
 }
 
 input {
   display: block;
   margin-block-end: 5px;
-  width: 150px;
+  width: 300px;
   padding: 5px;
 }
 
 button {
-  width: 70px;
+  float: right;
+  border: 1px solid black;
+  padding: 0.4em;
+  width: 100px;
 }
 
-.book_details {
+.book_display {
   margin: 0;
-  padding: 0;
+  list-style: none;
+  flex-direction: column;
+  gap: 0.2em;
+  border: 3px solid black;
+  padding: 0.5em;
+  display: none;
 }
 
-ul {
+.book_display .book_details {
+  margin: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  padding: 0.5em;
+}
+
+ul div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10em;
+}
+
+hr {
+  display: none;
 }
 
 li {
   margin: 0;
   text-transform: capitalize;
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+form {
+  margin-block-start: 3em;
 }
