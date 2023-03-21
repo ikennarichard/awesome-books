@@ -123,9 +123,9 @@ You can use Github Pages to deploy this project
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/bancunguye66)
+- Twitter: [@twitterhandle](https://twitter.com/bancunguye66)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/aimable-bancunguye)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
