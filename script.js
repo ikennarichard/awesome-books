@@ -1,51 +1,75 @@
-const booKTitle = document.querySelector('.book_title');
-const bookAuthor = document.querySelector('.book_author');
 const addBookBtn = document.querySelector('.addbook_btn');
 const bookDisplayScreen = document.querySelector('.book_display');
-const formElem = document.querySelector('form');
-
-const booksArray = localStorage.getItem('books_store') ? JSON.parse(localStorage.getItem('books_store')) : [];
-
-// add books to local storage
+const form = document.querySelector('form');
 
 
-function addBook() {
-  let title = booKTitle.value;
-  let author = bookAuthor.value;
 
-  let booksObj = {
-    title: title,
-    author: author,
+localStorage.setItem('book_store', JSON.stringify([]))
+
+let bookList = JSON.parse(localStorage.getItem('book_store'));
+
+function updateStorage() {
+  localStorage.setItem('book_store', JSON.stringify(bookList))
+}
+
+function addBook(e) {
+  e.preventDefault()
+
+  const booKTitleValue = document.querySelector('.book_title').value;
+  const booKAuthorValue = document.querySelector('.book_author').value;
+
+  book = {
+    title: booKTitleValue,
+    author: booKAuthorValue,
   }
 
-  booksArray.push(booksObj);
-  localStorage.setItem('books_store', JSON.stringify(booksArray));
+  addToBookList(book);
+  updateStorage()
+  displayBooks();
+}
 
-  displayBook(title, author)
+//add to book list
+
+function addToBookList(item) {
+  bookList.push(item)
 }
 
 //remove book from list
 function removeBook(i) {
-  booksArray.splice(i, 1)
+  bookList.splice(i, 1);
+  updateStorage();
+  displayBooks()
 }
 
-function displayBook(title, author) {
-  bookDisplayScreen.innerHTML+=`
-  <ul class='book_details'>
-    <li>${title}</li>
-    <li>${author}</li>
-    <button type='button' class='remove_book'>Remove</button>
+// set list for iteme to display
+
+function setListItems(arr) {
+  let items = ''
+  for (let i=0; i < arr.length; i++) {
+    items += `
+    <li>${arr[i].title}</li>
+    <li>${arr[i].author}</li>
+    <button type='button' class='remove_book' onclick='removeBook(${i})'>Remove</button>
     <hr/>
+    `
+  }
+  return items;
+}
+
+
+function displayBooks() {
+  bookDisplayScreen.innerHTML=`
+  <ul class='book_details'>
+  ${setListItems(bookList)}
   </ul>
   `
-  const details = [...document.querySelectorAll('.book_details')];
-
-  const books = [...document.querySelectorAll('.remove_book')];
-
-  books.forEach((item, i) => item.addEventListener('click', () => {
-    details[i].remove();
-    removeBook(i)
-  }));
+  activateBtn();
 }
 
-formElem.addEventListener('submit', addBook)
+function activateBtn () {
+  console.log('activated')
+  const details = [...document.querySelectorAll('.book_details')];
+  const removeBookBtn = [...document.querySelectorAll('.remove_book')];
+}
+
+form.addEventListener('submit', (e) => addBook(e))
