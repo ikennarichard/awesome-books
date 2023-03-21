@@ -16,3 +16,7 @@ button {
 .book_details > p {
   margin: 0;
 }
+
+ul {
+  list-style: none;
+}
