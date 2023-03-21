@@ -1,12 +1,7 @@
-const addBookBtn = document.querySelector('.addbook_btn');
 const bookDisplayScreen = document.querySelector('.book_display');
 const form = document.querySelector('form');
-
-
-
-localStorage.setItem('book_store', JSON.stringify([]))
-
-let bookList = JSON.parse(localStorage.getItem('book_store'));
+localStorage.setItem('book_store', JSON.stringify([]));
+const bookList = JSON.parse(localStorage.getItem('book_store'));
 
 function updateStorage() {
   localStorage.setItem('book_store', JSON.stringify(bookList))
@@ -53,6 +48,7 @@ function setListItems(arr) {
     <hr/>
     `
   }
+  console.log(items)
   return items;
 }
 
@@ -63,13 +59,14 @@ function displayBooks() {
   ${setListItems(bookList)}
   </ul>
   `
-  activateBtn();
+  activateTemp();
 }
 
-function activateBtn () {
-  console.log('activated')
+function activateTemp() {
   const details = [...document.querySelectorAll('.book_details')];
   const removeBookBtn = [...document.querySelectorAll('.remove_book')];
 }
 
-form.addEventListener('submit', (e) => addBook(e))
+form.addEventListener('submit', (e) => addBook(e));
+
+window.onload = displayBooks();
