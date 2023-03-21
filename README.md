@@ -118,14 +118,14 @@ You can use Github Pages to deploy this project
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/ikennarichard)
-- Twitter: [@twitterhandle](https://twitter.com/ikennarichard_)
+- GitHub: [Richard](https://github.com/ikennarichard)
+- Twitter: [Richard](https://twitter.com/ikennarichard_)
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/bancunguye66)
-- Twitter: [@twitterhandle](https://twitter.com/bancunguye66)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/aimable-bancunguye)
+- GitHub: [Aima](https://github.com/bancunguye66)
+- Twitter: [Aima](https://twitter.com/bancunguye66)
+- LinkedIn: [Aima](https://linkedin.com/in/aimable-bancunguye)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
