@@ -28,16 +28,6 @@ function displayBooks() {
   `;
 }
 
-function removeBook(i) {
-  bookList.splice(i, 1);
-  updateStorage();
-  displayBooks();
-}
-
-document.querySelectorAll('.remove_book').forEach((btn, i) => btn.addEventListener('click', () => {
-  removeBook(i);
-}));
-
 function clearInputs() {
   document.querySelector('.book_title').value = '';
   document.querySelector('.book_author').value = '';
