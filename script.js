@@ -2,6 +2,7 @@ const booKTitle = document.querySelector('.book_title');
 const bookAuthor = document.querySelector('.book_author');
 const addBookBtn = document.querySelector('.addbook_btn');
 const bookDisplayScreen = document.querySelector('.book_display');
+const formElem = document.querySelector('form');
 
 const booksArray = localStorage.getItem('books_store') ? JSON.parse(localStorage.getItem('books_store')) : [];
 
@@ -30,12 +31,12 @@ function removeBook(i) {
 
 function displayBook(title, author) {
   bookDisplayScreen.innerHTML+=`
-  <div class='book_details'>
-    <p>${title}</p>
-    <p>${author}</p>
+  <ul class='book_details'>
+    <li>${title}</li>
+    <li>${author}</li>
     <button type='button' class='remove_book'>Remove</button>
     <hr/>
-  </div>
+  </ul>
   `
   const details = [...document.querySelectorAll('.book_details')];
 
@@ -47,4 +48,4 @@ function displayBook(title, author) {
   }));
 }
 
-addBookBtn.addEventListener('click', addBook)
+formElem.addEventListener('submit', addBook)
