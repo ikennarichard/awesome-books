@@ -20,7 +20,6 @@ input {
 }
 
 button {
-  width: 70px;
   float: right;
   border: 1px solid black;
   padding: 0.4em;
@@ -30,7 +29,7 @@ button {
 .book_details {
   margin: 0;
   list-style: none;
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 0.2em;
   border: 3px solid black;

@@ -64,7 +64,7 @@
 ### Key Features <a name="key-features"></a>
 
 - **Form used to add books**
-- **Display added books**
+- **Display added books using classes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

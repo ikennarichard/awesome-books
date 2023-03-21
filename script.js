@@ -71,4 +71,11 @@ form.addEventListener('submit', (e) => {
   clearInputs();
 });
 
+document.addEventListener('click', (e) => {
+  const target = e.target.closest('.remove_book');
+  if (target) {
+    awesomeBooks.removeBook(Number(e.target.dataset.id));
+  }
+});
+
 window.onload = awesomeBooks.displayBooks();
