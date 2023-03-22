@@ -1,12 +1,7 @@
 /* eslint-disable class-methods-use-this */
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
+import Book from './Book.js';
 
-class AwesomeBooks {
+class AwesomeHelpers {
   constructor() {
     this.bookStore = localStorage.getItem('book_store') ? JSON.parse(localStorage.getItem('book_store')) : localStorage.setItem('book_store', JSON.stringify([]));
   }
@@ -58,7 +53,7 @@ class AwesomeBooks {
 }
 
 const form = document.querySelector('form');
-const awesomeBooks = new AwesomeBooks();
+const awesomeBooks = new AwesomeHelpers();
 
 document.querySelectorAll('.remove_book').forEach((btn, i) => btn.addEventListener('click', () => {
   awesomeBooks.removeBook(i);
