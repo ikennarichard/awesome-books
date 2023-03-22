@@ -59,7 +59,6 @@ input {
 }
 
 button {
-  float: right;
   border: 1px solid black;
   padding: 0.4em;
   width: 100px;
@@ -109,6 +108,18 @@ hr {
 
 form {
   margin-block-start: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form button {
+  align-self: flex-end;
+}
+
+.contact, .add_new, .list {
+  display: grid;
+  place-items: center;
 }
 
 footer {
