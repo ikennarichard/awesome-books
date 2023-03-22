@@ -1,3 +1,35 @@
+header {
+  border: 3px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0.7em;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.2rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+
+nav ul li {
+  border-right: 3px solid black;
+  padding-right: 0.5em;
+}
+
+nav ul li:last-child {
+  border: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
 main {
   width: 100%;
   display: grid;
@@ -17,6 +49,7 @@ input {
   margin-block-end: 5px;
   width: 300px;
   padding: 5px;
+  border: 1.5px solid black;
 }
 
 button {
@@ -45,7 +78,7 @@ button {
   padding: 0.5em;
 }
 
-ul div {
+.book_display ul div {
   display: flex;
   justify-content: flex-end;
   gap: 10em;
@@ -55,7 +88,7 @@ hr {
   display: none;
 }
 
-li {
+.book_dispay li {
   margin: 0;
   text-transform: capitalize;
   display: flex;
