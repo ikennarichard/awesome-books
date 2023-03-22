@@ -3,7 +3,7 @@ import Book from './Book.js';
 
 class AwesomeHelpers {
   constructor() {
-    this.bookStore = localStorage.getItem('book_store') ? JSON.parse(localStorage.getItem('book_store')) : localStorage.setItem('book_store', JSON.stringify([]));
+    this.bookStore = JSON.parse(localStorage.getItem('book_store')) || [];
   }
 
   addBook(title, author) {
@@ -21,6 +21,11 @@ class AwesomeHelpers {
   }
 
   displayBooks() {
+    document.querySelector('.book_display').style.display = 'flex';
+
+    if (this.bookStore.length === 0) {
+      document.querySelector('.book_display').style.display = '';
+    }
     document.querySelector('.book_display').innerHTML = `
     <ul class='book_details'>
     ${this.setListItems(this.bookStore)}

@@ -26,13 +26,22 @@ button {
   width: 100px;
 }
 
-.book_details {
+.book_display {
+  margin: 0;
+  list-style: none;
+  flex-direction: column;
+  gap: 0.2em;
+  border: 3px solid black;
+  padding: 0.5em;
+  display: none;
+}
+
+.book_display .book_details {
   margin: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.2em;
-  border: 3px solid black;
   padding: 0.5em;
 }
 
