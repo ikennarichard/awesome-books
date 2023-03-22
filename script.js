@@ -68,14 +68,7 @@ form.addEventListener('submit', (e) => {
   const booKAuthorValue = document.querySelector('.book_author').value;
 
   awesomeBooks.addBook(booKTitleValue, booKAuthorValue);
-  // clearInputs();
-});
-
-document.addEventListener('click', (e) => {
-  const target = e.target.closest('.remove_book');
-  if (target) {
-    awesomeBooks.removeBook(Number(e.target.dataset.id));
-  }
+  clearInputs();
 });
 
 window.onload = awesomeBooks.displayBooks();
