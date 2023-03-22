@@ -108,6 +108,12 @@ navLinks.forEach((link, i) => link.addEventListener('click', (e) => {
   changeLinksColor(e);
 }));
 
+function displayDate() {
+  let date = new Date();
+  date = date.toDateString();
+  document.querySelector('.date_display').innerHTML = date;
+}
+
 function loadSections() {
   navSections.forEach((section) => {
     if (section.id !== 'list') {
@@ -117,6 +123,7 @@ function loadSections() {
 }
 
 window.onload = () => {
+  displayDate();
   loadSections();
   awesomeBooks.displayBooks();
 };
