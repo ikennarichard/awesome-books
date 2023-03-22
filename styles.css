@@ -1,3 +1,9 @@
+body {
+  display: grid;
+  gap: 2em;
+  min-height: 100vh;
+}
+
 header {
   border: 3px solid black;
   display: flex;
@@ -82,13 +88,14 @@ button {
   display: flex;
   justify-content: flex-end;
   gap: 10em;
+  padding: 0.2em;
 }
 
 hr {
   display: none;
 }
 
-.book_dispay li {
+.book_display li {
   margin: 0;
   text-transform: capitalize;
   display: flex;
@@ -96,6 +103,15 @@ hr {
   width: 100%;
 }
 
+.book_display ul div:nth-child(odd) {
+  background-color: lavender;
+}
+
 form {
   margin-block-start: 3em;
+}
+
+footer {
+  border: 3px solid black;
+  padding: 1em;
 }
