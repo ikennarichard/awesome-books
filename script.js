@@ -55,10 +55,6 @@ class AwesomeHelpers {
 const form = document.querySelector('form');
 const awesomeBooks = new AwesomeHelpers();
 
-document.querySelectorAll('.remove_book').forEach((btn, i) => btn.addEventListener('click', () => {
-  awesomeBooks.removeBook(i);
-}));
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
