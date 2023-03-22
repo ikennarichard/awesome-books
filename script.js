@@ -1,7 +1,16 @@
 const bookDisplayScreen = document.querySelector('.book_display');
 const form = document.querySelector('form');
 
-const bookList = JSON.parse(localStorage.getItem('book_store')) || [];
+class AwesomeBook {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+}
+
+localStorage.setItem('book_store', JSON.stringify([]));
+
+const bookList = JSON.parse(localStorage.getItem('book_store'));
 
 function updateStorage() {
   localStorage.setItem('book_store', JSON.stringify(bookList));
@@ -38,11 +47,6 @@ document.querySelectorAll('.remove_book').forEach((btn, i) => btn.addEventListen
   removeBook(i);
 }));
 
-function clearInputs() {
-  document.querySelector('.book_title').value = '';
-  document.querySelector('.book_author').value = '';
-}
-
 function addToBookList(item) {
   bookList.push(item);
 }
@@ -50,20 +54,14 @@ function addToBookList(item) {
 function addBook(e) {
   e.preventDefault();
 
-  const bookTitleValue = document.querySelector('.book_title').value;
-  const bookAuthorValue = document.querySelector('.book_author').value;
+  const booKTitleValue = document.querySelector('.book_title').value;
+  const booKAuthorValue = document.querySelector('.book_author').value;
 
-  if (bookTitleValue === '' || bookAuthorValue === '') return;
-
-  const book = {
-    title: bookTitleValue,
-    author: bookAuthorValue,
-  };
+  const book = new AwesomeBook(booKTitleValue, booKAuthorValue);
 
   addToBookList(book);
   updateStorage();
   displayBooks();
-  clearInputs();
 }
 
 form.addEventListener('submit', (e) => addBook(e));
