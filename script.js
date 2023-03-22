@@ -32,10 +32,11 @@ class AwesomeHelpers {
     let listItems = '';
     for (let i = 0; i < arr.length; i += 1) {
       listItems += `
-      <li>${arr[i].title}</li>
-      <li>${arr[i].author}</li>
+      <div>
+      <li><b>"${arr[i].title.trim()}"</b><span>by</span><strong>${arr[i].author}</strong></li>
       <button type='button' class='remove_book' data-id='${i}'>Remove</button>
       <hr/>
+      </div>
       `;
     }
     return listItems;
@@ -55,6 +56,11 @@ class AwesomeHelpers {
 const form = document.querySelector('form');
 const awesomeBooks = new AwesomeHelpers();
 
+function clearInputs() {
+  document.querySelector('.book_title').value = '';
+  document.querySelector('.book_author').value = '';
+}
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -62,6 +68,7 @@ form.addEventListener('submit', (e) => {
   const booKAuthorValue = document.querySelector('.book_author').value;
 
   awesomeBooks.addBook(booKTitleValue, booKAuthorValue);
+  // clearInputs();
 });
 
 document.addEventListener('click', (e) => {
