@@ -116,7 +116,7 @@ function loadSections() {
   });
 }
 
-window.onload = () => {git 
+window.onload = () => {
   loadSections();
   awesomeBooks.displayBooks();
 };
