@@ -10,6 +10,7 @@ header {
   justify-content: space-between;
   padding-inline: 0.7em;
   align-items: center;
+  height: 40px;
 }
 
 h1 {
@@ -34,6 +35,10 @@ nav ul li:last-child {
 nav ul li a {
   text-decoration: none;
   color: black;
+}
+
+nav ul li a:focus {
+  color: blue;
 }
 
 main {
@@ -117,12 +122,26 @@ form button {
   align-self: flex-end;
 }
 
-.contact, .add_new, .list {
+.contact_section, .add_section {
+  display: grid;
+  place-items: center;
+}
+
+.list_section {
   display: grid;
   place-items: center;
 }
 
 footer {
   border: 3px solid black;
-  padding: 1em;
+  padding: 0.3em;
+  height: 30px;
+}
+
+.hide_section {
+  display: none;
+}
+
+.change_color {
+  color: blue;
 }

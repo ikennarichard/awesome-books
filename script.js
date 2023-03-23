@@ -83,4 +83,34 @@ document.addEventListener('click', (e) => {
   }
 });
 
+const navLinks = [...document.querySelectorAll('nav ul li > a')];
+const navSections = [...document.querySelectorAll('section')];
+const listSection = document.querySelector('.list');
+
+function removeSections() {
+  navSections.forEach((section) => {
+    section.classList.add('hide_section');
+  });
+}
+
+navLinks.forEach((link, i) => link.addEventListener('click', (e) => {
+  e.preventDefault();
+  listSection.classList.remove('change_color');
+  if (navSections[i].id === e.target.className) {
+    removeSections();
+    navSections[i].classList.remove('hide_section');
+  }
+}));
+
+function loadSections() {
+  navSections.forEach((section, i) => {
+    if (section.id !== 'list') {
+      section.classList.add('hide_section');
+    }
+    if (navLinks[i].className === 'list') {
+      navLinks[i].classList.add('change_color');
+    }
+  });
+}
+loadSections();
 window.onload = awesomeBooks.displayBooks();
