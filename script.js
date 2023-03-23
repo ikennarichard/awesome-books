@@ -115,5 +115,8 @@ function loadSections() {
     }
   });
 }
-loadSections();
-window.onload = awesomeBooks.displayBooks();
+
+window.onload = () => {git 
+  loadSections();
+  awesomeBooks.displayBooks();
+};
