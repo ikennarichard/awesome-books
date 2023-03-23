@@ -109,9 +109,13 @@ navLinks.forEach((link, i) => link.addEventListener('click', (e) => {
 }));
 
 function displayDate() {
-  let date = new Date();
-  date = date.toDateString();
-  document.querySelector('.date_display').innerHTML = date;
+  const date = new Date();
+  const strDate = date.toDateString();
+  const hrs = date.getHours();
+  const mins = date.getMinutes();
+  const secs = date.getSeconds();
+  const notation = hrs < 12 ? 'am' : 'pm';
+  document.querySelector('.date_display').innerHTML = `${strDate} ${hrs}:${mins}:${secs}${notation}`;
 }
 
 function loadSections() {
@@ -123,7 +127,7 @@ function loadSections() {
 }
 
 window.onload = () => {
-  displayDate();
+  setInterval(() => displayDate(), 1000);
   loadSections();
   awesomeBooks.displayBooks();
 };

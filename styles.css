@@ -17,15 +17,23 @@ h1 {
   font-size: 1.2rem;
 }
 
+nav ul li {
+  border-right: 3px solid black;
+  padding-right: 0.5em;
+}
+
+.book_display li {
+  margin: 0;
+  text-transform: capitalize;
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
 nav ul {
   display: flex;
   gap: 10px;
   list-style: none;
-}
-
-nav ul li {
-  border-right: 3px solid black;
-  padding-right: 0.5em;
 }
 
 nav ul li:last-child {
@@ -99,14 +107,6 @@ hr {
   display: none;
 }
 
-.book_display li {
-  margin: 0;
-  text-transform: capitalize;
-  display: flex;
-  gap: 6px;
-  width: 100%;
-}
-
 .book_display ul div:nth-child(odd) {
   background-color: lavender;
 }
@@ -122,7 +122,8 @@ form button {
   align-self: flex-end;
 }
 
-.contact_section, .add_section {
+.contact_section,
+.add_section {
   display: grid;
   place-items: center;
 }
