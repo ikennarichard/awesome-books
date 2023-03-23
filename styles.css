@@ -45,7 +45,7 @@ main {
   width: 100%;
   display: grid;
   gap: 10px;
-  place-items: center;
+  justify-items: center;
 }
 
 .container {
@@ -138,6 +138,22 @@ footer {
   height: 30px;
 }
 
+address {
+  font-style: normal;
+  font-weight: bold;
+}
+
+address a {
+  text-decoration: none;
+  color: black;
+}
+
 .hide_section {
   display: none;
+}
+
+.date_display {
+  position: absolute;
+  top: 4em;
+  right: 1em;
 }
