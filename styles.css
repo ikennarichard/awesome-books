@@ -32,12 +32,12 @@ nav ul li:last-child {
   border: none;
 }
 
-nav ul li a {
+.link {
   text-decoration: none;
   color: black;
 }
 
-nav ul li a:focus {
+.link.change_color {
   color: blue;
 }
 
@@ -140,8 +140,4 @@ footer {
 
 .hide_section {
   display: none;
-}
-
-.change_color {
-  color: blue;
 }

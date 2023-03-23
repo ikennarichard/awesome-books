@@ -83,9 +83,8 @@ document.addEventListener('click', (e) => {
   }
 });
 
-const navLinks = [...document.querySelectorAll('nav ul li > a')];
+const navLinks = [...document.querySelectorAll('.link')];
 const navSections = [...document.querySelectorAll('section')];
-const listSection = document.querySelector('.list');
 
 function removeSections() {
   navSections.forEach((section) => {
@@ -93,22 +92,26 @@ function removeSections() {
   });
 }
 
+function changeLinksColor(e) {
+  document.querySelector('.link.change_color').classList.remove('change_color');
+  e.currentTarget.classList.add('change_color');
+}
+
 navLinks.forEach((link, i) => link.addEventListener('click', (e) => {
   e.preventDefault();
-  listSection.classList.remove('change_color');
-  if (navSections[i].id === e.target.className) {
+
+  if (e.target.className.includes(navSections[i].id)) {
     removeSections();
     navSections[i].classList.remove('hide_section');
   }
+
+  changeLinksColor(e);
 }));
 
 function loadSections() {
-  navSections.forEach((section, i) => {
+  navSections.forEach((section) => {
     if (section.id !== 'list') {
       section.classList.add('hide_section');
-    }
-    if (navLinks[i].className === 'list') {
-      navLinks[i].classList.add('change_color');
     }
   });
 }
