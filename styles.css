@@ -40,12 +40,12 @@ nav ul li:last-child {
   border: none;
 }
 
-.link {
+a {
   text-decoration: none;
   color: black;
 }
 
-.link.change_color {
+.change_color {
   color: blue;
 }
 
@@ -123,14 +123,13 @@ form button {
 }
 
 .contact_section,
-.add_section {
-  display: grid;
+.add_section, .list_section {
   place-items: center;
+  display: none;
 }
 
-.list_section {
+.show {
   display: grid;
-  place-items: center;
 }
 
 footer {
