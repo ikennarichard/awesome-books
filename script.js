@@ -107,14 +107,6 @@ function displayDate() {
   document.querySelector('.date_display').innerHTML = `${date.toDateString()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}${date.getHours() < 12 ? 'am' : 'pm'}`;
 }
 
-// function loadSections() {
-//   navSections.forEach((section) => {
-//     if (section.id !== 'list') {
-//       section.classList.add('hide_section');
-//     }
-//   });
-// }
-
 window.onload = () => {
   setInterval(() => displayDate(), 1000);
   awesomeBooks.displayBooks();
