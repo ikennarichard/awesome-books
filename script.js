@@ -85,7 +85,7 @@ document.addEventListener('click', (e) => {
 
 const navLinks = [...document.querySelectorAll('.link')];
 
-function removeSections(e) {
+function toggleSections(e) {
   const { item } = e.currentTarget.dataset;
   document.querySelector('.show').classList.remove('show');
   document.querySelector(item).classList.add('show');
@@ -98,7 +98,7 @@ function changeLinksColor(e) {
 
 navLinks.forEach((link) => link.addEventListener('click', (e) => {
   e.preventDefault();
-  removeSections(e);
+  toggleSections(e);
   changeLinksColor(e);
 }));
 
